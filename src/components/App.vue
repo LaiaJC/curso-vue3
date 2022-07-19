@@ -40,55 +40,44 @@
             ComponentePropComputada,
             ComponenteTableData,
             ComponenteTableProperty,
-            // UnComponente  : UnComponente,
-            // AComponente   : UnComponente,
-            // Renderizado   : Renderizado,
-            // Eventos       : Eventos,
-            // Comunication  : Comunication,
-            // SlotComponent : SlotComponent,
-            // ComponenteUno : ComponenteUno,
-            // ComponenteDos : ComponenteDos,
-            // MonoRootComponent : MonoRootComponent,
-            // MultiRootComponent : MultiRootComponent,
-            // NoAtributos : NoAtributos,
+            // UnComponente: UnComponente,
+            // AComponente: UnComponente,
+            // Renderizado: Renderizado,
+            // Eventos: Eventos,
+            // Comunication: Comunication,
+            // SlotComponent: SlotComponent,
+            // ComponenteUno: ComponenteUno,
+            // ComponenteDos: ComponenteDos,
+            // MonoRootComponent: MonoRootComponent,
+            // MultiRootComponent: MultiRootComponent,
+            // NoAtributos: NoAtributos,
             Hijo1 : Hijo1,
         },
         beforeCreate: function(){
             console.log('dentro de la función beforeCreate');
             console.log(this);
         },
-        created: function(){
-            console.log('dentro de la función created!');
-            console.log(this.$props);
-            // setInterval( () => {
-            //     this.persona1.age = Math.random();
-            // }, 500);
-        },
-        // data() {
-            // return {
-            //     persona1: { 
-            //         name: 'Laia',
-            //         surname: 'Apellido',
-            //         age: 36
-            //     },
-            //     persona2: { 
-            //         name: 'David',
-            //         surname: 'Apellido',
-            //         age: 37
-            //     },
-            //     tasks: todoObject as ITodoDTO[],
-            //     data: "" as string,
-            //     idRow: "" as string
-            // }
-        // },
         data(): Record<string, unknown> {
             return {
-                // contador : 0,
-                // clicks      : 0,
-                // titulo      : 0,
-                // atributo    : "id",
-                // suma        : 0,
-                // componentName : "ComponenteUno",
+                persona1: { 
+                    name: 'Laia',
+                    surname: 'Apellido',
+                    age: 36
+                },
+                persona2: { 
+                    name: 'David',
+                    surname: 'Apellido',
+                    age: 37
+                },
+                tasks: todoObject as ITodoDTO[],
+                data: "" as string,
+                idRow: "" as string,
+                contador: 0,
+                clicks: 0,
+                titulo: 0,
+                atributo: "id",
+                suma: 0,
+                componentName: "ComponenteUno",
             };
         },
         computed : {
@@ -96,20 +85,25 @@
                 return ( this.clicks % 2 === 0 );
             },
         },
-        // created() : void {
+        created() : void{
 
-            // console.info( "App created, data: ", this.$data  );
-            //
+            console.log('dentro de la función created!');
+            console.log(this.$props);
+
             // setInterval( () => {
-            //     this.contador +=1;
-            // }, 2000 );
+            //     this.persona1.age = Math.random();
+            // }, 500);
 
-        //     setInterval( () => {
-        //         this.titulo +=1;
-        //     }, 1000 );
+            console.info( "App created, data: ", this.$data  );
+            
+            setInterval( () => {
+                this.contador +=1;
+            }, 2000 );
 
-
-        // },
+            setInterval( () => {
+                this.titulo +=1;
+            }, 1000 );
+        },
         methods: {
             updateFila(data:string):void {
                 console.log('DENTRO DE UPDATE FILA');

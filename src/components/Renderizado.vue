@@ -90,7 +90,7 @@
 
         <div>
             <h3>Bucle sobre un array</h3>
-            <p v-for="item in unArray">
+            <p v-for="( item, index ) in unArray" v-bind:key="index">
                 {{ item }}
             </p>
         </div>

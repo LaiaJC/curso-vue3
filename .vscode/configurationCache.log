@@ -1,0 +1,1 @@
+{"buildTargets":["boot","build","build-dev","check","clean","clean-environment","destroy","install","install-ci","interactive","reset-permissions","root-permissions","start-up","tdd","test","test-functional","test-integration","test-unit","user-permissions"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}

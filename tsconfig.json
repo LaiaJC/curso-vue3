@@ -29,7 +29,8 @@
         "sourceMap": true,
         "removeComments": false,
         "suppressImplicitAnyIndexErrors": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true
     },
     "include": [
         "src",

@@ -25,13 +25,16 @@
     // import MonoRootComponent from "./MonoRootComponent.vue";
     // import MultiRootComponent from "./MultiRootComponent.vue";
     // import NoAtributos from "./NoAtributos.vue";
-    import Hijo1 from "./Hijo1.vue";
+    // import Hijo1 from "./Hijo1.vue";
+    // import TemplateRef from "./TemplateRef.vue";
+    import Formularios from "./Formularios.vue";
 
     export default vue.defineComponent( {
         name : "App",
         props : {
             numero : Number as vue.PropType<number>,
         },
+<<<<<<< HEAD
         components: {
             ComponenteH1: ComponenteH1,
             ComponenteP: ComponenteP,
@@ -52,6 +55,26 @@
             // MultiRootComponent: MultiRootComponent,
             // NoAtributos: NoAtributos,
             Hijo1 : Hijo1,
+=======
+
+        components : {
+
+            // UnComponente  : UnComponente,
+            // AComponente   : UnComponente,
+            // Renderizado   : Renderizado,
+            // Eventos       : Eventos,
+            // Comunication  : Comunication,
+            // SlotComponent : SlotComponent,
+            // ComponenteUno : ComponenteUno,
+            // ComponenteDos : ComponenteDos,
+            // MonoRootComponent : MonoRootComponent,
+            // MultiRootComponent : MultiRootComponent,
+            // NoAtributos : NoAtributos,
+            // Hijo1 : Hijo1,
+            // TemplateRef : TemplateRef,
+            Formularios : Formularios,
+
+>>>>>>> 7e7fd6528e0feb7e5cd5519cd411f2880b273e48
         },
         beforeCreate: function(){
             console.log('dentro de la función beforeCreate');
@@ -232,7 +255,11 @@
         <!--     class="uno dos" -->
         <!-- /> -->
 
-        <Hijo1/>
+        <!-- <Hijo1/> -->
+
+        <!-- <TemplateRef/> -->
+
+        <Formularios/>
 
     </div>
 

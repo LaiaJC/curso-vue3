@@ -34,28 +34,6 @@
         props : {
             numero : Number as vue.PropType<number>,
         },
-<<<<<<< HEAD
-        components: {
-            ComponenteH1: ComponenteH1,
-            ComponenteP: ComponenteP,
-            ComponenteEjWatch: ComponenteEjWatch,
-            ComponenteClicksButton,
-            ComponentePropComputada,
-            ComponenteTableData,
-            ComponenteTableProperty,
-            // UnComponente: UnComponente,
-            // AComponente: UnComponente,
-            // Renderizado: Renderizado,
-            // Eventos: Eventos,
-            // Comunication: Comunication,
-            // SlotComponent: SlotComponent,
-            // ComponenteUno: ComponenteUno,
-            // ComponenteDos: ComponenteDos,
-            // MonoRootComponent: MonoRootComponent,
-            // MultiRootComponent: MultiRootComponent,
-            // NoAtributos: NoAtributos,
-            Hijo1 : Hijo1,
-=======
 
         components : {
 
@@ -74,7 +52,6 @@
             // TemplateRef : TemplateRef,
             Formularios : Formularios,
 
->>>>>>> 7e7fd6528e0feb7e5cd5519cd411f2880b273e48
         },
         beforeCreate: function(){
             console.log('dentro de la función beforeCreate');

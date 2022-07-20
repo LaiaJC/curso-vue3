@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
-
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 19 07:30:26 2022
+# Make data base, printed on Wed Jul 20 09:38:49 2022
 
 # Variables
 
@@ -47,7 +45,7 @@ VSCODE_NLS_CONFIG = {"locale":"es","availableLanguages":{"*":"es"},"_languagePac
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:57953
+JOURNAL_STREAM = 8:59719
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -73,7 +71,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # makefile (from 'Makefile', line 2)
 VERSION := `node -pe "require('./package.json').version"`
 # environment
-MANAGERPID = 2614
+MANAGERPID = 2735
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -87,7 +85,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/TLL-185653:@/tmp/.ICE-unix/2832,unix/TLL-185653:/tmp/.ICE-unix/2832
+SESSION_MANAGER = local/TLL-185653:@/tmp/.ICE-unix/2957,unix/TLL-185653:/tmp/.ICE-unix/2957
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from '.env', line 1)
@@ -101,7 +99,7 @@ CMD_TEST_UNIT := sh /root/bootstrap.sh; npm run test:unit
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = e420791817964e0f9acd213d0e775e83
+INVOCATION_ID = 3f113e224daf47f9a822ab538b6fe7de
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,7 +109,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7230
+GIO_LAUNCHED_DESKTOP_FILE_PID = 10997
 # automatic
 %F = $(notdir $%)
 # environment
@@ -125,7 +123,7 @@ PWD = /home/ljimenez/ngcs/repos/curso-vue3
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2792
+SSH_AGENT_PID = 2919
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -245,7 +243,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 7230
+VSCODE_PID = 10997
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
@@ -305,6 +303,9 @@ test: start-up
 	@$(MAKE) user-permissions
 
 build:
+ 
+make: *** No rule to make target 'all'.  Stop.
+
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -333,7 +334,6 @@ test-unit: start-up
 # Not a target:
 .env:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-07-05 13:28:17.101139801
 #  File has been updated.
 #  Successfully updated.
@@ -473,6 +473,6 @@ install: clean-environment
 # strcache performance: lookups = 132 / hit rate = 65%
 # hash-table stats:
 # Load=46/8192=1%, Rehash=0, Collisions=1/132=1%
-# Finished Make data base on Tue Jul 19 07:30:26 2022
+# Finished Make data base on Wed Jul 20 09:38:49 2022
 
  

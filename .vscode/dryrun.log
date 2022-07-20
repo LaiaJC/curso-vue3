@@ -1,6 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/ljimenez/ngcs/repos/curso-vue3'
- 
 make: Nothing to be done for 'check'.
 make: Leaving directory '/home/ljimenez/ngcs/repos/curso-vue3'
  

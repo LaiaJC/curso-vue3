@@ -1,58 +1,108 @@
 <script lang="ts">
 
     import * as vue from "vue";
+    import ModalComponent from "./ModalComponent.vue";
 
     //Interfaces
     import { ITodoDTO } from "./ITodoDTO";
 
-    //Leer fichero de datos
-    import toDoObject from "./todoObject.json";
-
     export default vue.defineComponent( {
 
         name : "ComponenteFilaTabla",
-        props : {
-            currentaction : {
-                type: String as vue.PropType<string>,
-                required: false,
-                default: ""
-            }
+        components: {
+            ModalComponent: ModalComponent
         },
         data() {
             return {
-                tasks: toDoObject as ITodoDTO[],
-                action: "" as string
+                action: "" as string,
+                toggle: this.currentTask.completed
+            }
+        },
+        props: {
+            currentTask: {
+                type: Object as vue.PropType<ITodoDTO>,
+                required: true
             }
         },
         emit: ['evento_fila'],
         methods: {
-            print( id, event : Event ) : void {
-                // console.log(id);
-                // console.log(event);
-            },
-
             doActionFila(id,currAc){
-                console.log('Dentro de do Action Fila');
-                console.info('id '+id);
                 return [this.action = currAc, id];
+            },
+            openModal(){
+                let self = this;               
+                self.modalShow = true;
+            },
+            updateRowTask(data) {
+                let idT : number = data[0];
+                let nameT : string = data[1];
+                let descriptionT : string = data[2];
+
+                this.$refs[`refTaskName_${idT}`].innerText = nameT;
+                this.$refs[`refTaskDescription_${idT}`].innerText = descriptionT;
+            },
+            focusFunc(currIdTask){
+                 // SE PUEDE APLICAR EL FOCUS DE LAS DOS MANERAS:
+                this.$refs[`refModal_${currIdTask}`].doFocus(currIdTask);
+                //this.$refs[`refModal_${taskid}`][0].$refs[`myInputRef_${taskid}`].focus();
+            },
+            toggleButton() {
+                // console.log(toggleValue);
+                if(this.toggle == true){
+                    //Completed
+                    this.toggle = false;
+                    // console.log(this.toggle);
+                    return this.toggle;
+                } else {
+                    //Not completed.
+                    this.toggle = true;
+                    // console.log(this.toggle);
+                    return this.toggle;
+                }
             }
-        }
+        },
     } );
 
 </script>
 
 <template>
-    <tr class="align-middle" v-for="task in tasks" v-bind:key="task.id">
-        <td>{{ task.id }}</td>
-        <td>{{ task.name }}</td>
-        <td v-if="task.completed === true">
-            Sí (Completada)
+
+    <tr :id="`row_${currentTask.id}`" class="align-middle" >
+        
+        <td style="text-align: center;">{{currentTask.id}}</td>
+        
+        <td :ref="`refTaskName_${currentTask.id}`">{{ currentTask.name }}</td>
+        
+        <td :ref="`refTaskDescription_${currentTask.id}`">
+            {{currentTask.description}}
         </td>
-        <td v-else>
-            No (Por completar)
+
+        <td v-if="toggle">Sí (Completada)</td>
+        <td v-else>No (Por completar)</td>
+        
+        <td v-if="toggle" style="text-align:center;">
+            <b-button variant="success" v-bind:id="'idButtonComplete_'+currentTask.id" v-on:click="$emit('evento_fila',doActionFila(currentTask.id,1));toggleButton();">
+                Completed
+            </b-button>
         </td>
-        <!-- <td>{{ task.completed }}</td> -->
-        <td><button v-bind:id="'idButtonComplete_'+task.id" v-on:click="print('idButtonComplete_'+task.id,$event);$emit('evento_fila',doActionFila('idButtonComplete_'+task.id,'update'))" class="btn btn-success">Complete</button></td>
-        <td><button v-bind:id="'idButtonDelete_'+task.id" v-on:click="print('idButtonDelete_'+task.id,$event);$emit('evento_fila',doActionFila('idButtonDelete_'+task.id,'delete'))" class="btn btn-danger">Delete</button></td>
+        
+        <td v-else style="text-align:center;">
+            <b-button variant="outline-success" v-bind:id="'idButtonComplete_'+currentTask.id" v-on:click="$emit('evento_fila',doActionFila(currentTask.id,1));toggleButton();">
+                Complete
+            </b-button>
+        </td>
+
+        <td style="text-align:center;">
+            <b-button variant="outline-danger" v-bind:id="'idButtonDelete_'+currentTask.id" v-on:click="$emit('evento_fila',doActionFila(currentTask.id,0))">
+                Delete
+            </b-button>
+        </td>
+
+        <td style="text-align:center;">
+            <b-button v-b-modal="'modal-tasks_'+currentTask.id" v-bind:id="'idButtonEdit_'+currentTask.id" v-on:click="openModal();" class="btn btn-secondary">
+                Edit
+            </b-button>
+            <ModalComponent v-bind:toggle="toggle" v-bind:theTask="currentTask" :ref="`refModal_${currentTask.id}`" v-on:evento_update_tarea="updateRowTask" @shown="focusFunc(currentTask.id)"/>
+        </td>
     </tr>
 </template>

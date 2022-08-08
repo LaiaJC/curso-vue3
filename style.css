@@ -10,3 +10,29 @@
     padding : 5px;
     margin  : 5px;
 }
+
+.radioButtonComponent {
+    border: 2px dotted silver;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.valueRB {
+    text-align: center;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.bold {
+    font-weight: bolder;
+    font-size: 18px;
+    color: black;
+}
+
+.red {
+    font-weight: bolder;
+    font-size: 18px;
+    color: red;
+}

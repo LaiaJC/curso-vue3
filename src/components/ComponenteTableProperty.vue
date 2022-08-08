@@ -12,12 +12,12 @@
         components: {
             ComponenteFilaTabla: ComponenteFilaTabla
         },
-        props : {
-            theTasksList: {
-                type : Array as vue.PropType<ITodoDTO[]>,
-                required: true
-            }
-        },
+        // props : {
+        //     theTasksList: {
+        //         type : Array as vue.PropType<ITodoDTO[]>,
+        //         required: true
+        //     }
+        // },
         
         data() : Record<string,unknown>{
             return{
@@ -32,7 +32,7 @@
                 //Me comunico con el PADRE (App.vue)
                 this.$emit('evento_fila_padre',data);
             }
-        }
+        },
     });
 
 </script>
@@ -57,6 +57,7 @@
                     <td>{{ task.completed }}</td>
                 </tr> -->
                 <ComponenteFilaTabla v-on:evento_fila="updateIdsApp"></ComponenteFilaTabla>
+                
             </tbody>
         </table>
     </div>

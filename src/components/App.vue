@@ -28,6 +28,7 @@
     // import Hijo1 from "./Hijo1.vue";
     // import TemplateRef from "./TemplateRef.vue";
     import Formularios from "./Formularios.vue";
+    import RadioButtonSelectViewVue from "./RadioButtonSelectView.vue";
 
     export default vue.defineComponent( {
         name : "App",
@@ -51,11 +52,12 @@
             // Hijo1 : Hijo1,
             // TemplateRef : TemplateRef,
             Formularios : Formularios,
-
+            RadioButtonSelectViewVue: RadioButtonSelectViewVue,
+            ComponenteTableProperty: ComponenteTableProperty,
         },
         beforeCreate: function(){
-            console.log('dentro de la función beforeCreate');
-            console.log(this);
+            // console.log('dentro de la función beforeCreate');
+            // console.log(this);
         },
         data(): Record<string, unknown> {
             return {
@@ -85,16 +87,21 @@
                 return ( this.clicks % 2 === 0 );
             },
         },
+        provide(){
+            return {
+                propTodo: vue.computed(()=>this.tasks)
+            }
+        },
         created() : void{
 
-            console.log('dentro de la función created!');
-            console.log(this.$props);
+            // console.log('dentro de la función created!');
+            // console.log(this.$props);
 
             // setInterval( () => {
             //     this.persona1.age = Math.random();
             // }, 500);
 
-            console.info( "App created, data: ", this.$data  );
+            // console.info( "App created, data: ", this.$data  );
             
             setInterval( () => {
                 this.contador +=1;
@@ -110,17 +117,17 @@
                 console.info('DATA: ');
                 console.info(data);
 
-                if(data[0] == 'delete'){
+                if(data[0] == '0'){
                     console.info('DELETE ROW!');
                     this.deleteRow(data[1]);
-                } else if(data[0] == 'update'){
+                } else if(data[0] == '1'){
                     console.info('UPDATE ROW!');
                     this.updateRow(data[1]);
                 }
             },
-            deleteRow(idRow){
+            deleteRow(idRow:number){
                 console.log('dentro del método delete Row '+idRow);
-                
+                document.getElementById('row_'+idRow)?.remove();
             },
             updateRow(idRow){
                 console.log('dentro del método update Row '+idRow); 
@@ -158,14 +165,15 @@
         <!-- <ComponentePropComputada v-bind:thePerson=persona1></ComponentePropComputada> -->
         <!-- <ComponentePropComputada v-bind:thePerson=persona2></ComponentePropComputada> -->
         <!-- <ComponenteTableData></ComponenteTableData> -->
-        <!-- <ComponenteTableProperty v-bind:theTasksList="tasks" v-on:evento_fila_padre="updateFila"></ComponenteTableProperty> -->
+        
 
     </div> 
 
     <div>
 
-        <p>Hello from App</p>
-
+        <RadioButtonSelectViewVue v-bind:theTasksList="tasks" v-on:evento_fila_top="updateFila"/>
+        
+        <!-- <ComponenteTableProperty v-bind:theTasksList="tasks" v-on:evento_fila_padre="updateFila"></ComponenteTableProperty> -->
         <!-- <p>Mis propios datos: contador = {{ contador }}</p> -->
 
         <!-- <p v-bind:[atributo]="`element-${ titulo }`"> -->
@@ -236,7 +244,7 @@
 
         <!-- <TemplateRef/> -->
 
-        <Formularios/>
+        <!-- <Formularios/> -->
 
     </div>
 

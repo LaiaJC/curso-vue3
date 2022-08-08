@@ -14,7 +14,21 @@
 
         },
 
-        data () : Record<string, unknown> {
+        directives: {
+            bordeRojoLocal: {
+                // Definición de directiva
+                created: (el, binding) => {
+                    // console.log('-----------------------------');
+                    // console.log('estoy dentro de la directiva LOCAL!');
+                    // console.log(el);
+                    // console.log(binding);
+                    // console.log('-----------------------------');
+                    el.style.border = "2px dotted silver";
+                }
+            }
+        },
+
+        data () : Record<string, any> {
 
             return {
 
@@ -59,7 +73,7 @@
 
         <h2>Formularios ( & v-model)</h2>
 
-        <div>
+        <div v-borde-rojo-global>
             <span><strong>Text</strong></span>
             <input v-model="text_message" placeholder="edit me" />
             <p>Message is: {{ text_message }}</p>
@@ -100,7 +114,7 @@
 
         <hr />
 
-        <div>
+        <div v-bordeRojoLocal>
             <span><strong>Radio Button</strong></span>
             <br />
             <input type="radio" id="one" value="One" v-model="theRadio" />
@@ -145,8 +159,8 @@
             <span><strong>Multiple Select con options como For</strong></span>
             <br />
             <select v-model="theMultipleSelectFor" multiple>
-                <option v-for="option in optionsFor" v-bind:key="option.text" v-bind:value="option.value">
-                    {{ option.text }}
+                <option v-for="option in optionsFor" v-bind:key="option['text']" v-bind:value="option['value']">
+                    {{ option['text'] }}
                 </option>
             </select>
             <span>Selected: {{ theMultipleSelectFor }}</span>
@@ -160,11 +174,11 @@
             <br />
             <br />
 
-            <span>Checkbox (cuando queremos que no tenga value true o false)</span>
+            <!-- <span>Checkbox (cuando queremos que no tenga value true o false)</span>
             <input type="checkbox" id="checkbox" v-model="theCheckboxBind" true-value="sipi" false-value="nope"/>
             <label for="checkbox">{{ theCheckboxBind }}</label>
             <br />
-            <br />
+            <br /> --> 
 
             <span><strong>Radio Button con valor dinámico</strong></span>
             <br />
@@ -175,8 +189,8 @@
             <span><strong>Multiple Select con options como objeto y en For</strong></span>
             <br />
             <select v-model="theMultipleSelectObjectFor" multiple>
-                <option v-for="option in optionsObjectFor" v-bind:key="option.text" v-bind:value="option.value">
-                    {{ option.text }}
+                <option v-for="option in optionsObjectFor" v-bind:key="option['text']" v-bind:value="option['value']">
+                    {{ option['text'] }}
                 </option>
             </select>
             <span>Selected: {{ theMultipleSelectObjectFor }}</span>
@@ -185,10 +199,10 @@
 
         <hr />
 
-        <div>
+        <!-- <div>
             <p>CustomInput : {{ customInput }}</p>
             <CustomInputComponent v-model="customInput" />
-        </div>
+        </div> -->
 
     </div>
 

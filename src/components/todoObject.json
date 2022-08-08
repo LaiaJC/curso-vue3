@@ -2,21 +2,29 @@
     {
         "id": 1,
         "name": "Aprender Vue",
-        "completed": false
+        "description": "Aprender A TOPE Vue.",
+        "completed": true,
+        "deleted": false
     },
     {
         "id": 2,
         "name": "Leer más",
-        "completed": false
+        "description": "Leer MUCHO más.",
+        "completed": false,
+        "deleted": false
     },
     {
         "id": 3,
         "name": "Hacer más deporte",
-        "completed": false
+        "description": "Hacer MUCHO más deporte.",
+        "completed": false,
+        "deleted": false
     },
     {
         "id": 4,
         "name": "Viajar a China",
-        "completed": false
+        "description": "Hacer un GRAN viaje.",
+        "completed": false,
+        "deleted": false
     }
 ]

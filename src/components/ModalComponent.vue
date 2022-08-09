@@ -1,7 +1,10 @@
 <script lang="ts">
 
     import * as vue from "vue";
-    // import SlotFooterModalComponentVue from "./SlotFooterModalComponent.vue";
+
+    //Slots
+    import SlotHeaderComponent from "./SlotHeaderComponent.vue";
+    import SlotFooterComponent from "./SlotFooterComponent.vue";
 
     //Interfaces
     import { ITodoDTO } from "./ITodoDTO";
@@ -11,6 +14,8 @@
         name : "ModalComponent",
         components: {
             // SlotFooterModalComponentVue: SlotFooterModalComponentVue
+            SlotHeaderComponent,
+            SlotFooterComponent
         },
         data() {
             return {
@@ -94,6 +99,14 @@
         <form class="stack-small">
 
             <b-container fluid>
+                <b-row class="mb-2">
+                    <SlotHeaderComponent>
+                        <template v-slot:headerTable></template>
+                    </SlotHeaderComponent>
+                </b-row>
+            </b-container>
+
+            <b-container fluid>
                 <b-row>
                     <b-col sm="6">
                         <b-row>
@@ -153,7 +166,16 @@
 
             </b-container>
 
-            <!-- <SlotFooterModalComponentVue /> -->
+            <b-container fluid>
+                <b-row class="mt-3">
+                    <SlotFooterComponent>
+                        <template v-slot:footerTable="bindValueSlotComp">
+                            <h4>{{bindValueSlotComp['roger']}}</h4>
+                            <h6>{{bindValueSlotComp['pau']}}</h6>
+                        </template>
+                    </SlotFooterComponent>
+                </b-row>
+            </b-container>
 
             <div class="w-100 text-align-right mt-2">
                 <b-button variant="outline-danger" data-bs-dismiss="modal">

@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Aug  8 07:17:29 2022
+# Make data base, printed on Mon Aug  8 15:04:18 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ CURDIR := /home/ljimenez/ngcs/repos/curso-vue3
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"es","availableLanguages":{"*":"es"},"_languagePackId":"aa57718bb4fee18a0bf2e4902cb2afaf.es","_translationsConfigFile":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es/tcf.json","_cacheRoot":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es","_resolvedLanguagePackCoreLocation":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es/3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es/corrupted.info","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"es","availableLanguages":{"*":"es"},"_languagePackId":"aa57718bb4fee18a0bf2e4902cb2afaf.es","_translationsConfigFile":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es/tcf.json","_cacheRoot":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es","_resolvedLanguagePackCoreLocation":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es/da76f93349a72022ca4670c1b84860304616aaa2","_corruptedFile":"/home/ljimenez/.config/Code/clp/aa57718bb4fee18a0bf2e4902cb2afaf.es/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /usr/share/code/code
 # environment
@@ -111,7 +111,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 6227
+GIO_LAUNCHED_DESKTOP_FILE_PID = 66741
 # automatic
 %F = $(notdir $%)
 # environment
@@ -139,7 +139,7 @@ HOME = /home/ljimenez
 # environment
 LESSCLOSE = /usr/bin/lesspipe %s %s
 # environment
-VSCODE_CODE_CACHE_PATH = /home/ljimenez/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /home/ljimenez/.config/Code/CachedData/da76f93349a72022ca4670c1b84860304616aaa2
 # environment
 LOGNAME = ljimenez
 # environment
@@ -191,7 +191,7 @@ MAKE_COMMAND := make
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-b87566af-1.69.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-b87566af-1.70.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -245,7 +245,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 6227
+VSCODE_PID = 66741
 # environment
 NVM_RC_VERSION = 
 # variable set hash-table stats:
@@ -473,6 +473,6 @@ install: clean-environment
 # strcache performance: lookups = 132 / hit rate = 65%
 # hash-table stats:
 # Load=46/8192=1%, Rehash=0, Collisions=1/132=1%
-# Finished Make data base on Mon Aug  8 07:17:29 2022
+# Finished Make data base on Mon Aug  8 15:04:18 2022
 
  
